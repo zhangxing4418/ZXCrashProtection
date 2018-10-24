@@ -1,0 +1,490 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		25FD0F486FD3A0D095307CA5 /* libPods-ZXCrashProtection.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 10E987418060D6C001FE1AE7 /* libPods-ZXCrashProtection.a */; };
+		9BEC9FCC217EBB2000C75780 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BEC9FCB217EBB2000C75780 /* AppDelegate.m */; };
+		9BEC9FCF217EBB2000C75780 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BEC9FCE217EBB2000C75780 /* ViewController.m */; };
+		9BEC9FD2217EBB2000C75780 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BEC9FD0217EBB2000C75780 /* Main.storyboard */; };
+		9BEC9FD4217EBB2200C75780 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9BEC9FD3217EBB2200C75780 /* Assets.xcassets */; };
+		9BEC9FD7217EBB2200C75780 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BEC9FD5217EBB2200C75780 /* LaunchScreen.storyboard */; };
+		9BEC9FDA217EBB2200C75780 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BEC9FD9217EBB2200C75780 /* main.m */; };
+		9BEC9FE7217ECEFB00C75780 /* NSObject+Unrecoginzed.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BEC9FE6217ECEFB00C75780 /* NSObject+Unrecoginzed.m */; };
+		9BEC9FEA217ED25100C75780 /* ZXStubObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BEC9FE9217ED25100C75780 /* ZXStubObject.m */; };
+		9BEC9FED217EF97000C75780 /* ZXCrashProtection.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BEC9FEC217EF97000C75780 /* ZXCrashProtection.m */; };
+		9BEC9FF1217F10A300C75780 /* NSNull+CrashProtection.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BEC9FF0217F10A300C75780 /* NSNull+CrashProtection.m */; };
+		9BEC9FF4217F13F800C75780 /* ContainerCrashProtection.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BEC9FF3217F13F800C75780 /* ContainerCrashProtection.m */; };
+		9BEC9FF8217F15AC00C75780 /* ZXRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BEC9FF7217F15AC00C75780 /* ZXRecord.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		10E987418060D6C001FE1AE7 /* libPods-ZXCrashProtection.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ZXCrashProtection.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9BEC9FC7217EBB2000C75780 /* ZXCrashProtection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZXCrashProtection.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9BEC9FCA217EBB2000C75780 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		9BEC9FCB217EBB2000C75780 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		9BEC9FCD217EBB2000C75780 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		9BEC9FCE217EBB2000C75780 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		9BEC9FD1217EBB2000C75780 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		9BEC9FD3217EBB2200C75780 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9BEC9FD6217EBB2200C75780 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		9BEC9FD8217EBB2200C75780 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9BEC9FD9217EBB2200C75780 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		9BEC9FE5217ECEFB00C75780 /* NSObject+Unrecoginzed.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+Unrecoginzed.h"; sourceTree = "<group>"; };
+		9BEC9FE6217ECEFB00C75780 /* NSObject+Unrecoginzed.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Unrecoginzed.m"; sourceTree = "<group>"; };
+		9BEC9FE8217ED25100C75780 /* ZXStubObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZXStubObject.h; sourceTree = "<group>"; };
+		9BEC9FE9217ED25100C75780 /* ZXStubObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZXStubObject.m; sourceTree = "<group>"; };
+		9BEC9FEB217EF97000C75780 /* ZXCrashProtection.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZXCrashProtection.h; sourceTree = "<group>"; };
+		9BEC9FEC217EF97000C75780 /* ZXCrashProtection.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZXCrashProtection.m; sourceTree = "<group>"; };
+		9BEC9FEF217F10A300C75780 /* NSNull+CrashProtection.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSNull+CrashProtection.h"; sourceTree = "<group>"; };
+		9BEC9FF0217F10A300C75780 /* NSNull+CrashProtection.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSNull+CrashProtection.m"; sourceTree = "<group>"; };
+		9BEC9FF2217F13F800C75780 /* ContainerCrashProtection.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ContainerCrashProtection.h; sourceTree = "<group>"; };
+		9BEC9FF3217F13F800C75780 /* ContainerCrashProtection.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ContainerCrashProtection.m; sourceTree = "<group>"; };
+		9BEC9FF6217F15AC00C75780 /* ZXRecord.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZXRecord.h; sourceTree = "<group>"; };
+		9BEC9FF7217F15AC00C75780 /* ZXRecord.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZXRecord.m; sourceTree = "<group>"; };
+		A87F71A11F97628381B1D8E4 /* Pods-ZXCrashProtection.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZXCrashProtection.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZXCrashProtection/Pods-ZXCrashProtection.release.xcconfig"; sourceTree = "<group>"; };
+		D3B27DE679F895EF9B921C9A /* Pods-ZXCrashProtection.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZXCrashProtection.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZXCrashProtection/Pods-ZXCrashProtection.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9BEC9FC4217EBB2000C75780 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				25FD0F486FD3A0D095307CA5 /* libPods-ZXCrashProtection.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1ECC6A3ECDBFEBB8C4C17EBC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				10E987418060D6C001FE1AE7 /* libPods-ZXCrashProtection.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9BEC9FBE217EBB2000C75780 = {
+			isa = PBXGroup;
+			children = (
+				9BEC9FC9217EBB2000C75780 /* ZXCrashProtection */,
+				9BEC9FC8217EBB2000C75780 /* Products */,
+				CF0412C14E59CD7FC3372FD2 /* Pods */,
+				1ECC6A3ECDBFEBB8C4C17EBC /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		9BEC9FC8217EBB2000C75780 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9BEC9FC7217EBB2000C75780 /* ZXCrashProtection.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9BEC9FC9217EBB2000C75780 /* ZXCrashProtection */ = {
+			isa = PBXGroup;
+			children = (
+				9BEC9FE0217EBB4F00C75780 /* Class */,
+				9BEC9FCA217EBB2000C75780 /* AppDelegate.h */,
+				9BEC9FCB217EBB2000C75780 /* AppDelegate.m */,
+				9BEC9FCD217EBB2000C75780 /* ViewController.h */,
+				9BEC9FCE217EBB2000C75780 /* ViewController.m */,
+				9BEC9FD0217EBB2000C75780 /* Main.storyboard */,
+				9BEC9FD3217EBB2200C75780 /* Assets.xcassets */,
+				9BEC9FD5217EBB2200C75780 /* LaunchScreen.storyboard */,
+				9BEC9FD8217EBB2200C75780 /* Info.plist */,
+				9BEC9FD9217EBB2200C75780 /* main.m */,
+			);
+			path = ZXCrashProtection;
+			sourceTree = "<group>";
+		};
+		9BEC9FE0217EBB4F00C75780 /* Class */ = {
+			isa = PBXGroup;
+			children = (
+				9BEC9FF5217F159800C75780 /* Record */,
+				9BEC9FEB217EF97000C75780 /* ZXCrashProtection.h */,
+				9BEC9FEC217EF97000C75780 /* ZXCrashProtection.m */,
+				9BEC9FEE217F0E6400C75780 /* Container */,
+				9BEC9FE4217ECEBA00C75780 /* Unrecognized */,
+			);
+			path = Class;
+			sourceTree = "<group>";
+		};
+		9BEC9FE4217ECEBA00C75780 /* Unrecognized */ = {
+			isa = PBXGroup;
+			children = (
+				9BEC9FE5217ECEFB00C75780 /* NSObject+Unrecoginzed.h */,
+				9BEC9FE6217ECEFB00C75780 /* NSObject+Unrecoginzed.m */,
+				9BEC9FE8217ED25100C75780 /* ZXStubObject.h */,
+				9BEC9FE9217ED25100C75780 /* ZXStubObject.m */,
+			);
+			path = Unrecognized;
+			sourceTree = "<group>";
+		};
+		9BEC9FEE217F0E6400C75780 /* Container */ = {
+			isa = PBXGroup;
+			children = (
+				9BEC9FEF217F10A300C75780 /* NSNull+CrashProtection.h */,
+				9BEC9FF0217F10A300C75780 /* NSNull+CrashProtection.m */,
+				9BEC9FF2217F13F800C75780 /* ContainerCrashProtection.h */,
+				9BEC9FF3217F13F800C75780 /* ContainerCrashProtection.m */,
+			);
+			path = Container;
+			sourceTree = "<group>";
+		};
+		9BEC9FF5217F159800C75780 /* Record */ = {
+			isa = PBXGroup;
+			children = (
+				9BEC9FF6217F15AC00C75780 /* ZXRecord.h */,
+				9BEC9FF7217F15AC00C75780 /* ZXRecord.m */,
+			);
+			path = Record;
+			sourceTree = "<group>";
+		};
+		CF0412C14E59CD7FC3372FD2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D3B27DE679F895EF9B921C9A /* Pods-ZXCrashProtection.debug.xcconfig */,
+				A87F71A11F97628381B1D8E4 /* Pods-ZXCrashProtection.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9BEC9FC6217EBB2000C75780 /* ZXCrashProtection */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9BEC9FDD217EBB2200C75780 /* Build configuration list for PBXNativeTarget "ZXCrashProtection" */;
+			buildPhases = (
+				79C25B792927AC16E86E7F47 /* [CP] Check Pods Manifest.lock */,
+				9BEC9FC3217EBB2000C75780 /* Sources */,
+				9BEC9FC4217EBB2000C75780 /* Frameworks */,
+				9BEC9FC5217EBB2000C75780 /* Resources */,
+				923FA271FA8F87F74D367902 /* [CP] Embed Pods Frameworks */,
+				68C3D6444718F6BEA8A025C0 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ZXCrashProtection;
+			productName = ZXCrashProtection;
+			productReference = 9BEC9FC7217EBB2000C75780 /* ZXCrashProtection.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9BEC9FBF217EBB2000C75780 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1000;
+				ORGANIZATIONNAME = CRM;
+				TargetAttributes = {
+					9BEC9FC6217EBB2000C75780 = {
+						CreatedOnToolsVersion = 10.0;
+					};
+				};
+			};
+			buildConfigurationList = 9BEC9FC2217EBB2000C75780 /* Build configuration list for PBXProject "ZXCrashProtection" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 9BEC9FBE217EBB2000C75780;
+			productRefGroup = 9BEC9FC8217EBB2000C75780 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9BEC9FC6217EBB2000C75780 /* ZXCrashProtection */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9BEC9FC5217EBB2000C75780 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9BEC9FD7217EBB2200C75780 /* LaunchScreen.storyboard in Resources */,
+				9BEC9FD4217EBB2200C75780 /* Assets.xcassets in Resources */,
+				9BEC9FD2217EBB2000C75780 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		68C3D6444718F6BEA8A025C0 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ZXCrashProtection/Pods-ZXCrashProtection-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		79C25B792927AC16E86E7F47 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ZXCrashProtection-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		923FA271FA8F87F74D367902 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ZXCrashProtection/Pods-ZXCrashProtection-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9BEC9FC3217EBB2000C75780 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9BEC9FF4217F13F800C75780 /* ContainerCrashProtection.m in Sources */,
+				9BEC9FCF217EBB2000C75780 /* ViewController.m in Sources */,
+				9BEC9FEA217ED25100C75780 /* ZXStubObject.m in Sources */,
+				9BEC9FED217EF97000C75780 /* ZXCrashProtection.m in Sources */,
+				9BEC9FE7217ECEFB00C75780 /* NSObject+Unrecoginzed.m in Sources */,
+				9BEC9FF1217F10A300C75780 /* NSNull+CrashProtection.m in Sources */,
+				9BEC9FDA217EBB2200C75780 /* main.m in Sources */,
+				9BEC9FF8217F15AC00C75780 /* ZXRecord.m in Sources */,
+				9BEC9FCC217EBB2000C75780 /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		9BEC9FD0217EBB2000C75780 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9BEC9FD1217EBB2000C75780 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		9BEC9FD5217EBB2200C75780 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9BEC9FD6217EBB2200C75780 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		9BEC9FDB217EBB2200C75780 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		9BEC9FDC217EBB2200C75780 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9BEC9FDE217EBB2200C75780 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D3B27DE679F895EF9B921C9A /* Pods-ZXCrashProtection.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = QV894GZCV2;
+				INFOPLIST_FILE = ZXCrashProtection/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.weishi.ZXCrashProtection;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		9BEC9FDF217EBB2200C75780 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A87F71A11F97628381B1D8E4 /* Pods-ZXCrashProtection.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = QV894GZCV2;
+				INFOPLIST_FILE = ZXCrashProtection/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.weishi.ZXCrashProtection;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9BEC9FC2217EBB2000C75780 /* Build configuration list for PBXProject "ZXCrashProtection" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9BEC9FDB217EBB2200C75780 /* Debug */,
+				9BEC9FDC217EBB2200C75780 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9BEC9FDD217EBB2200C75780 /* Build configuration list for PBXNativeTarget "ZXCrashProtection" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9BEC9FDE217EBB2200C75780 /* Debug */,
+				9BEC9FDF217EBB2200C75780 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9BEC9FBF217EBB2000C75780 /* Project object */;
+}
