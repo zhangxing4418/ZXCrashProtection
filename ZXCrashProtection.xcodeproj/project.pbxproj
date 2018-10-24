@@ -20,6 +20,11 @@
 		9BEC9FF1217F10A300C75780 /* NSNull+CrashProtection.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BEC9FF0217F10A300C75780 /* NSNull+CrashProtection.m */; };
 		9BEC9FF4217F13F800C75780 /* ContainerCrashProtection.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BEC9FF3217F13F800C75780 /* ContainerCrashProtection.m */; };
 		9BEC9FF8217F15AC00C75780 /* ZXRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BEC9FF7217F15AC00C75780 /* ZXRecord.m */; };
+		9BEC9FFB21800A1400C75780 /* NSArray+CrashProtection.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BEC9FFA21800A1400C75780 /* NSArray+CrashProtection.m */; };
+		9BEC9FFE218045E100C75780 /* NSMutableArray+CrashProtection.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BEC9FFD218045E100C75780 /* NSMutableArray+CrashProtection.m */; };
+		9BECA00121805AC700C75780 /* NSDictionary+CrashProtection.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BECA00021805AC700C75780 /* NSDictionary+CrashProtection.m */; };
+		9BECA00421806C8400C75780 /* NSMutableDictionary+CrashProtection.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BECA00321806C8400C75780 /* NSMutableDictionary+CrashProtection.m */; };
+		9BECA007218076A700C75780 /* NSCache+CrashProtection.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BECA006218076A700C75780 /* NSCache+CrashProtection.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +51,16 @@
 		9BEC9FF3217F13F800C75780 /* ContainerCrashProtection.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ContainerCrashProtection.m; sourceTree = "<group>"; };
 		9BEC9FF6217F15AC00C75780 /* ZXRecord.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZXRecord.h; sourceTree = "<group>"; };
 		9BEC9FF7217F15AC00C75780 /* ZXRecord.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZXRecord.m; sourceTree = "<group>"; };
+		9BEC9FF921800A1400C75780 /* NSArray+CrashProtection.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSArray+CrashProtection.h"; sourceTree = "<group>"; };
+		9BEC9FFA21800A1400C75780 /* NSArray+CrashProtection.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSArray+CrashProtection.m"; sourceTree = "<group>"; };
+		9BEC9FFC218045E100C75780 /* NSMutableArray+CrashProtection.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+CrashProtection.h"; sourceTree = "<group>"; };
+		9BEC9FFD218045E100C75780 /* NSMutableArray+CrashProtection.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+CrashProtection.m"; sourceTree = "<group>"; };
+		9BEC9FFF21805AC700C75780 /* NSDictionary+CrashProtection.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+CrashProtection.h"; sourceTree = "<group>"; };
+		9BECA00021805AC700C75780 /* NSDictionary+CrashProtection.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+CrashProtection.m"; sourceTree = "<group>"; };
+		9BECA00221806C8400C75780 /* NSMutableDictionary+CrashProtection.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSMutableDictionary+CrashProtection.h"; sourceTree = "<group>"; };
+		9BECA00321806C8400C75780 /* NSMutableDictionary+CrashProtection.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSMutableDictionary+CrashProtection.m"; sourceTree = "<group>"; };
+		9BECA005218076A700C75780 /* NSCache+CrashProtection.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSCache+CrashProtection.h"; sourceTree = "<group>"; };
+		9BECA006218076A700C75780 /* NSCache+CrashProtection.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSCache+CrashProtection.m"; sourceTree = "<group>"; };
 		A87F71A11F97628381B1D8E4 /* Pods-ZXCrashProtection.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZXCrashProtection.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZXCrashProtection/Pods-ZXCrashProtection.release.xcconfig"; sourceTree = "<group>"; };
 		D3B27DE679F895EF9B921C9A /* Pods-ZXCrashProtection.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZXCrashProtection.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZXCrashProtection/Pods-ZXCrashProtection.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -131,10 +146,20 @@
 		9BEC9FEE217F0E6400C75780 /* Container */ = {
 			isa = PBXGroup;
 			children = (
-				9BEC9FEF217F10A300C75780 /* NSNull+CrashProtection.h */,
-				9BEC9FF0217F10A300C75780 /* NSNull+CrashProtection.m */,
 				9BEC9FF2217F13F800C75780 /* ContainerCrashProtection.h */,
 				9BEC9FF3217F13F800C75780 /* ContainerCrashProtection.m */,
+				9BEC9FEF217F10A300C75780 /* NSNull+CrashProtection.h */,
+				9BEC9FF0217F10A300C75780 /* NSNull+CrashProtection.m */,
+				9BEC9FF921800A1400C75780 /* NSArray+CrashProtection.h */,
+				9BEC9FFA21800A1400C75780 /* NSArray+CrashProtection.m */,
+				9BEC9FFC218045E100C75780 /* NSMutableArray+CrashProtection.h */,
+				9BEC9FFD218045E100C75780 /* NSMutableArray+CrashProtection.m */,
+				9BEC9FFF21805AC700C75780 /* NSDictionary+CrashProtection.h */,
+				9BECA00021805AC700C75780 /* NSDictionary+CrashProtection.m */,
+				9BECA00221806C8400C75780 /* NSMutableDictionary+CrashProtection.h */,
+				9BECA00321806C8400C75780 /* NSMutableDictionary+CrashProtection.m */,
+				9BECA005218076A700C75780 /* NSCache+CrashProtection.h */,
+				9BECA006218076A700C75780 /* NSCache+CrashProtection.m */,
 			);
 			path = Container;
 			sourceTree = "<group>";
@@ -286,8 +311,13 @@
 				9BEC9FEA217ED25100C75780 /* ZXStubObject.m in Sources */,
 				9BEC9FED217EF97000C75780 /* ZXCrashProtection.m in Sources */,
 				9BEC9FE7217ECEFB00C75780 /* NSObject+Unrecoginzed.m in Sources */,
+				9BEC9FFB21800A1400C75780 /* NSArray+CrashProtection.m in Sources */,
 				9BEC9FF1217F10A300C75780 /* NSNull+CrashProtection.m in Sources */,
+				9BECA00121805AC700C75780 /* NSDictionary+CrashProtection.m in Sources */,
 				9BEC9FDA217EBB2200C75780 /* main.m in Sources */,
+				9BECA00421806C8400C75780 /* NSMutableDictionary+CrashProtection.m in Sources */,
+				9BECA007218076A700C75780 /* NSCache+CrashProtection.m in Sources */,
+				9BEC9FFE218045E100C75780 /* NSMutableArray+CrashProtection.m in Sources */,
 				9BEC9FF8217F15AC00C75780 /* ZXRecord.m in Sources */,
 				9BEC9FCC217EBB2000C75780 /* AppDelegate.m in Sources */,
 			);
@@ -366,7 +396,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -419,7 +449,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -435,6 +465,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QV894GZCV2;
 				INFOPLIST_FILE = ZXCrashProtection/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -453,6 +484,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QV894GZCV2;
 				INFOPLIST_FILE = ZXCrashProtection/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

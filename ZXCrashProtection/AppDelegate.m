@@ -21,8 +21,9 @@
     [ZXCrashProtection recordErrorDelegate:self];
     [ZXCrashProtection start];
     
-    id ss = @"ffff";
-    [ss objectForKey:@"test"];
+    NSCache *c = [[NSCache alloc] init];
+    [c setObject:nil forKey:@"ee"];
+    NSLog(@"%@", [c objectForKey:nil]);
     
     return YES;
 }

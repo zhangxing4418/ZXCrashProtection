@@ -103,7 +103,7 @@ static id<ZXCrashProtectionProtocol>__delegate;
     
     NSString *errorPlace = [NSString stringWithFormat:@"%@", mainCallStackSymbolMsg];
     
-    NSString *logErrorMessage = [NSString stringWithFormat:@"\n\n%@\n\n%@\n%@\n%@", ZXCrashProtectionSeparatorWithFlag, errorName, errorReason, errorPlace];
+    NSString *logErrorMessage = [NSString stringWithFormat:@"\n\n%@\n\n errorName: %@\n errorReason: %@\n errorPlace: %@", ZXCrashProtectionSeparatorWithFlag, errorName, errorReason, errorPlace];
     
     logErrorMessage = [NSString stringWithFormat:@"%@\n\n%@\n\n", logErrorMessage, ZXCrashProtectionSeparator];
     NSLog(@"%@", logErrorMessage);

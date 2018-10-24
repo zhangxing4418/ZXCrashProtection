@@ -25,12 +25,12 @@
     RSSwizzleInstanceMethod([NSObject class], @selector(forwardingTargetForSelector:), RSSWReturnType(id), RSSWArguments(SEL aSelector), RSSWReplacement({
         BOOL isWorking = [ZXCrashProtection isWorking];
         if (isWorking) {
-            [ZXRecord recordNoteErrorWithReason:@"unrecognized selector" errorType:ZXCrashProtectionTypeUnrecognizedSelector];
             BOOL aBool = [self respondsToSelector:aSelector];
             NSMethodSignature *signature = [self methodSignatureForSelector:aSelector];
             if (aBool || signature) {
                 return RSSWCallOriginal(aSelector);
             }else {
+                [ZXRecord recordNoteErrorWithReason:@"unrecognized selector" errorType:ZXCrashProtectionTypeUnrecognizedSelector];
                 ZXStubObject *stub = [ZXStubObject shareInstance];
                 [stub addFunc:aSelector];
                 return stub;
