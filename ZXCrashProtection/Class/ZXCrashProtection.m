@@ -9,6 +9,7 @@
 #import "ZXCrashProtection.h"
 #import "NSObject+Unrecoginzed.h"
 #import "ContainerCrashProtection.h"
+#import "StringCrashProtection.h"
 #import "ZXRecord.h"
 
 static BOOL __isWorking;
@@ -27,6 +28,7 @@ static BOOL __isWorking;
     if (type & ZXCrashProtectionTypeAll) {
         [NSObject launchUnrecoginzedSelectorProtection];
         [ContainerCrashProtection launchContainerCrashProtection];
+        [StringCrashProtection launchStringCrashProtection];
     }
     if (type & ZXCrashProtectionTypeUnrecognizedSelector) {
         [NSObject launchUnrecoginzedSelectorProtection];
@@ -44,7 +46,7 @@ static BOOL __isWorking;
         [ContainerCrashProtection launchContainerCrashProtection];
     }
     if (type & ZXCrashProtectionTypeString) {
-        
+        [StringCrashProtection launchStringCrashProtection];
     }
 }
 
