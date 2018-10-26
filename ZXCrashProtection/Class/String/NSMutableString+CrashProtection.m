@@ -23,6 +23,7 @@
         [NSMutableString zx_swizzle_replaceOccurrencesOfStringWithStringOptionsRange];
         [NSMutableString zx_swizzle_insertStringAtIndex];
         [NSMutableString zx_swizzle_deleteCharactersInRange];
+        [NSMutableString zx_swizzle_appendString];
     });
 }
 
@@ -31,7 +32,7 @@
     RSSwizzleInstanceMethod(class, @selector(replaceCharactersInRange:withString:), RSSWReturnType(void), RSSWArguments(NSRange range, NSString *aString), RSSWReplacement({
         if ([ZXCrashProtection isWorking]) {
             if (aString) {
-                if ((range.location + range.length) <= [self length]) {
+                if ((NSInteger)range.location >= 0 && (NSInteger)range.length >= 0 && NSMaxRange(range) <= [self length]) {
                     RSSWCallOriginal(range, aString);
                 }else {
                     [ZXRecord recordNoteErrorWithReason:[NSString stringWithFormat:@"-[%@ replaceCharactersInRange:withString:]: Range %@ out of bounds; string length %ld", NSStringFromClass(class), NSStringFromRange(range), [self length]] errorType:ZXCrashProtectionTypeString];
@@ -50,7 +51,7 @@
     RSSwizzleInstanceMethod(class, @selector(replaceOccurrencesOfString:withString:options:range:), RSSWReturnType(NSUInteger), RSSWArguments(NSString *target, NSString *replacement, NSStringCompareOptions options, NSRange searchRange), RSSWReplacement({
         if ([ZXCrashProtection isWorking]) {
             if (target && replacement) {
-                if ((searchRange.location + searchRange.length) <= [self length]) {
+                if ((NSInteger)searchRange.location >= 0 && (NSInteger)searchRange.length >= 0 && NSMaxRange(searchRange) <= [self length]) {
                     return RSSWCallOriginal(target, replacement, options, searchRange);
                 }else {
                     [ZXRecord recordNoteErrorWithReason:[NSString stringWithFormat:@"-[%@ replaceOccurrencesOfString:withString:options:range:]: Range %@ out of bounds; string length %ld", NSStringFromClass(class), NSStringFromRange(searchRange), [self length]] errorType:ZXCrashProtectionTypeString];
@@ -89,8 +90,7 @@
     Class class = NSClassFromString(@"__NSCFString");
     RSSwizzleInstanceMethod(class, @selector(deleteCharactersInRange:), RSSWReturnType(void), RSSWArguments(NSRange range), RSSWReplacement({
         if ([ZXCrashProtection isWorking]) {
-            if (NSMaxRange(range) <= [self length]) {
-                NSLog(@"%ld", range.location + range.length);
+            if ((NSInteger)range.location >= 0 && (NSInteger)range.length >= 0 && NSMaxRange(range) <= [self length]) {
                 RSSWCallOriginal(range);
             }else {
                 [ZXRecord recordNoteErrorWithReason:[NSString stringWithFormat:@"-[%@ deleteCharactersInRange:]: Range %@ out of bounds", NSStringFromClass(class), NSStringFromRange(range)] errorType:ZXCrashProtectionTypeString];
@@ -100,5 +100,22 @@
         }
     }), RSSwizzleModeAlways, nil);
 }
+
++ (void)zx_swizzle_appendString {
+    Class class = NSClassFromString(@"__NSCFString");
+    RSSwizzleInstanceMethod(class, @selector(appendString:), RSSWReturnType(void), RSSWArguments(NSString *aString), RSSWReplacement({
+        if ([ZXCrashProtection isWorking]) {
+            if (aString) {
+                RSSWCallOriginal(aString);
+            }else {
+                [ZXRecord recordNoteErrorWithReason:[NSString stringWithFormat:@"-[%@ appendString:]: nil argument", NSStringFromClass(class)] errorType:ZXCrashProtectionTypeString];
+            }
+        }else {
+            RSSWCallOriginal(aString);
+        }
+    }), RSSwizzleModeAlways, nil);
+}
+
+
 
 @end

@@ -21,17 +21,6 @@
     [ZXCrashProtection recordErrorDelegate:self];
     [ZXCrashProtection start];
     
-    char *characters = "characters";
-//    NSString *string = [[NSString alloc] initWithString:@"characters"];
-    NSMutableString *string = [[NSMutableString alloc] initWithUTF8String:characters];    /*--NSTaggedPointerString*/
-//    NSString *string = [[NSString alloc] initWithFormat:@"%@", @"characters"];  --NSTaggedPointerString
-//    NSString *string = [NSString stringWithFormat:@"%@", @"characters"];
-//    NSString *string = [[NSString alloc] initWithCString:characters encoding:NSUTF8StringEncoding]; --NSTaggedPointerString
-//    NSString *string = [[NSString alloc] initWithCharacters:nil length:10];
-//    NSString *string = [[NSString alloc] initWithCoder:nil];
-    [string deleteCharactersInRange:NSMakeRange(-9, 10)];
-    NSLog(@"%@", string);
-    
     return YES;
 }
 

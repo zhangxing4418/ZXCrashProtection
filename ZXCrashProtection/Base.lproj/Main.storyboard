@@ -22,22 +22,70 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="欢迎" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k3a-Im-gpz">
-                                <rect key="frame" x="147.5" y="309.5" width="80.5" height="48"/>
+                                <rect key="frame" x="147" y="309.5" width="81" height="48"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XqO-iG-cWp">
+                                <rect key="frame" x="170" y="480" width="35" height="30"/>
+                                <state key="normal" title="Push"/>
+                                <connections>
+                                    <segue destination="OUg-Hp-ncZ" kind="modal" id="lQa-ZT-Edi"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="k3a-Im-gpz" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="LiQ-fa-rdH"/>
+                            <constraint firstItem="XqO-iG-cWp" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="kXX-sU-z1x"/>
                             <constraint firstItem="k3a-Im-gpz" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="mga-8H-3Mv"/>
+                            <constraint firstItem="7IP-rH-NG3" firstAttribute="top" secondItem="XqO-iG-cWp" secondAttribute="bottom" constant="157" id="xkb-HY-kUt"/>
                         </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="100.29985007496252"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="HSi-bH-LYc">
+            <objects>
+                <viewController id="OUg-Hp-ncZ" customClass="KVOViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="pXO-At-K4i"/>
+                        <viewControllerLayoutGuide type="bottom" id="ckr-25-1Ic"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Cad-t2-liI">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="KVO" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D3i-Gw-grk">
+                                <rect key="frame" x="145" y="308" width="85" height="51"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="42"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5wu-4F-1oK">
+                                <rect key="frame" x="169" y="480" width="37" height="30"/>
+                                <state key="normal" title="close"/>
+                                <connections>
+                                    <action selector="close:" destination="OUg-Hp-ncZ" eventType="touchUpInside" id="gt2-Ba-Czj"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="D3i-Gw-grk" firstAttribute="centerX" secondItem="Cad-t2-liI" secondAttribute="centerX" id="WbE-wf-Zyh"/>
+                            <constraint firstItem="ckr-25-1Ic" firstAttribute="top" secondItem="5wu-4F-1oK" secondAttribute="bottom" constant="157" id="Zec-Lb-bvc"/>
+                            <constraint firstItem="D3i-Gw-grk" firstAttribute="centerX" secondItem="5wu-4F-1oK" secondAttribute="centerX" id="rbN-nL-ei2"/>
+                            <constraint firstItem="D3i-Gw-grk" firstAttribute="centerY" secondItem="Cad-t2-liI" secondAttribute="centerY" id="uVb-3a-lvV"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wVj-bw-zX9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="881" y="100"/>
         </scene>
     </scenes>
 </document>

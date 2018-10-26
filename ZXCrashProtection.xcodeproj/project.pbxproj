@@ -29,6 +29,9 @@
 		9BECA00E2181545E00C75780 /* StringCrashProtection.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BECA00D2181545E00C75780 /* StringCrashProtection.m */; };
 		9BECA0112181A36E00C75780 /* NSMutableString+CrashProtection.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BECA0102181A36E00C75780 /* NSMutableString+CrashProtection.m */; };
 		9BECA0142181B88200C75780 /* BaseStringSwizzleMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BECA0132181B88200C75780 /* BaseStringSwizzleMethod.m */; };
+		9BECA0182182B57D00C75780 /* ZXKVODelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BECA0172182B57D00C75780 /* ZXKVODelegate.m */; };
+		9BECA01B2182B83900C75780 /* NSObject+KVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BECA01A2182B83900C75780 /* NSObject+KVO.m */; };
+		9BECA01E2182ED7800C75780 /* KVOViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BECA01D2182ED7800C75780 /* KVOViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -73,6 +76,12 @@
 		9BECA0102181A36E00C75780 /* NSMutableString+CrashProtection.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSMutableString+CrashProtection.m"; sourceTree = "<group>"; };
 		9BECA0122181B88200C75780 /* BaseStringSwizzleMethod.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseStringSwizzleMethod.h; sourceTree = "<group>"; };
 		9BECA0132181B88200C75780 /* BaseStringSwizzleMethod.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseStringSwizzleMethod.m; sourceTree = "<group>"; };
+		9BECA0162182B57D00C75780 /* ZXKVODelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZXKVODelegate.h; sourceTree = "<group>"; };
+		9BECA0172182B57D00C75780 /* ZXKVODelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZXKVODelegate.m; sourceTree = "<group>"; };
+		9BECA0192182B83900C75780 /* NSObject+KVO.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+KVO.h"; sourceTree = "<group>"; };
+		9BECA01A2182B83900C75780 /* NSObject+KVO.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+KVO.m"; sourceTree = "<group>"; };
+		9BECA01C2182ED7800C75780 /* KVOViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KVOViewController.h; sourceTree = "<group>"; };
+		9BECA01D2182ED7800C75780 /* KVOViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KVOViewController.m; sourceTree = "<group>"; };
 		A87F71A11F97628381B1D8E4 /* Pods-ZXCrashProtection.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZXCrashProtection.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZXCrashProtection/Pods-ZXCrashProtection.release.xcconfig"; sourceTree = "<group>"; };
 		D3B27DE679F895EF9B921C9A /* Pods-ZXCrashProtection.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZXCrashProtection.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZXCrashProtection/Pods-ZXCrashProtection.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -121,6 +130,8 @@
 				9BEC9FE0217EBB4F00C75780 /* Class */,
 				9BEC9FCA217EBB2000C75780 /* AppDelegate.h */,
 				9BEC9FCB217EBB2000C75780 /* AppDelegate.m */,
+				9BECA01C2182ED7800C75780 /* KVOViewController.h */,
+				9BECA01D2182ED7800C75780 /* KVOViewController.m */,
 				9BEC9FCD217EBB2000C75780 /* ViewController.h */,
 				9BEC9FCE217EBB2000C75780 /* ViewController.m */,
 				9BEC9FD0217EBB2000C75780 /* Main.storyboard */,
@@ -138,6 +149,7 @@
 				9BEC9FF5217F159800C75780 /* Record */,
 				9BEC9FEB217EF97000C75780 /* ZXCrashProtection.h */,
 				9BEC9FEC217EF97000C75780 /* ZXCrashProtection.m */,
+				9BECA0152182B35100C75780 /* KVO */,
 				9BECA0082181539C00C75780 /* String */,
 				9BEC9FEE217F0E6400C75780 /* Container */,
 				9BEC9FE4217ECEBA00C75780 /* Unrecognized */,
@@ -199,6 +211,17 @@
 				9BECA0132181B88200C75780 /* BaseStringSwizzleMethod.m */,
 			);
 			path = String;
+			sourceTree = "<group>";
+		};
+		9BECA0152182B35100C75780 /* KVO */ = {
+			isa = PBXGroup;
+			children = (
+				9BECA0162182B57D00C75780 /* ZXKVODelegate.h */,
+				9BECA0172182B57D00C75780 /* ZXKVODelegate.m */,
+				9BECA0192182B83900C75780 /* NSObject+KVO.h */,
+				9BECA01A2182B83900C75780 /* NSObject+KVO.m */,
+			);
+			path = KVO;
 			sourceTree = "<group>";
 		};
 		CF0412C14E59CD7FC3372FD2 /* Pods */ = {
@@ -339,6 +362,7 @@
 				9BEC9FEA217ED25100C75780 /* ZXStubObject.m in Sources */,
 				9BEC9FED217EF97000C75780 /* ZXCrashProtection.m in Sources */,
 				9BECA00E2181545E00C75780 /* StringCrashProtection.m in Sources */,
+				9BECA01E2182ED7800C75780 /* KVOViewController.m in Sources */,
 				9BEC9FE7217ECEFB00C75780 /* NSObject+Unrecoginzed.m in Sources */,
 				9BEC9FFB21800A1400C75780 /* NSArray+CrashProtection.m in Sources */,
 				9BEC9FF1217F10A300C75780 /* NSNull+CrashProtection.m in Sources */,
@@ -346,8 +370,10 @@
 				9BEC9FDA217EBB2200C75780 /* main.m in Sources */,
 				9BECA00421806C8400C75780 /* NSMutableDictionary+CrashProtection.m in Sources */,
 				9BECA00B218153E200C75780 /* NSString+CrashProtection.m in Sources */,
+				9BECA01B2182B83900C75780 /* NSObject+KVO.m in Sources */,
 				9BECA0112181A36E00C75780 /* NSMutableString+CrashProtection.m in Sources */,
 				9BECA0142181B88200C75780 /* BaseStringSwizzleMethod.m in Sources */,
+				9BECA0182182B57D00C75780 /* ZXKVODelegate.m in Sources */,
 				9BECA007218076A700C75780 /* NSCache+CrashProtection.m in Sources */,
 				9BEC9FFE218045E100C75780 /* NSMutableArray+CrashProtection.m in Sources */,
 				9BEC9FF8217F15AC00C75780 /* ZXRecord.m in Sources */,

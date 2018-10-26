@@ -173,7 +173,7 @@
 + (void)__zx_swizzle_substringWithRangeForClass:(Class)class {
     RSSwizzleInstanceMethod(class, @selector(substringWithRange:), RSSWReturnType(NSString *), RSSWArguments(NSRange range), RSSWReplacement({
         if ([ZXCrashProtection isWorking]) {
-            if ((range.location + range.length) <= [self length]) {
+            if ((NSInteger)range.location >= 0 && (NSInteger)range.length >= 0 && NSMaxRange(range) <= [self length]) {
                 return RSSWCallOriginal(range);
             }else {
                 [ZXRecord recordNoteErrorWithReason:[NSString stringWithFormat:@"-[%@ substringWithRange:]: Range %@ out of bounds; string length %ld", NSStringFromClass(class), NSStringFromRange(range), [self length]] errorType:ZXCrashProtectionTypeString];
@@ -189,7 +189,7 @@
     RSSwizzleInstanceMethod(class, @selector(stringByReplacingOccurrencesOfString:withString:options:range:), RSSWReturnType(NSString *), RSSWArguments(NSString *target, NSString *replacement, NSStringCompareOptions options, NSRange searchRange), RSSWReplacement({
         if ([ZXCrashProtection isWorking]) {
             if (target && replacement) {
-                if ((searchRange.location + searchRange.length) <= [self length]) {
+                if ((NSInteger)searchRange.location >= 0 && (NSInteger)searchRange.length >= 0 && NSMaxRange(searchRange) <= [self length]) {
                     return RSSWCallOriginal(target, replacement, options, searchRange);
                 }else {
                     [ZXRecord recordNoteErrorWithReason:[NSString stringWithFormat:@"-[%@ stringByReplacingOccurrencesOfString:withString:options:range:]: Range %@ out of bounds; string length %ld", NSStringFromClass(class), NSStringFromRange(searchRange), [self length]] errorType:ZXCrashProtectionTypeString];
@@ -209,7 +209,7 @@
     RSSwizzleInstanceMethod(class, @selector(stringByReplacingCharactersInRange:withString:), RSSWReturnType(NSString *), RSSWArguments(NSRange range, NSString *replacement), RSSWReplacement({
         if ([ZXCrashProtection isWorking]) {
             if (replacement) {
-                if ((range.location + range.length) <= [self length]) {
+                if ((NSInteger)range.location >= 0 && (NSInteger)range.length >= 0 && NSMaxRange(range) <= [self length]) {
                     return RSSWCallOriginal(range, replacement);
                 }else {
                     [ZXRecord recordNoteErrorWithReason:[NSString stringWithFormat:@"-[%@ stringByReplacingCharactersInRange:withString:]: Range %@ out of bounds; string length %ld", NSStringFromClass(class), NSStringFromRange(range), [self length]] errorType:ZXCrashProtectionTypeString];
