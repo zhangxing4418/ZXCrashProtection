@@ -33,17 +33,16 @@
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         [NSObject zx_swizzle_addObserverForKeyPathOptionsContext];
-//        [NSObject zx_swizzle_removeObserverForKeyPath];
+        [NSObject zx_swizzle_removeObserverForKeyPath];
+        [NSObject zx_swizzle_observeValueForKeyPathOfObjectChangeContext];
     });
 }
 
 + (void)zx_swizzle_addObserverForKeyPathOptionsContext {
     RSSwizzleInstanceMethod([NSObject class], @selector(addObserver:forKeyPath:options:context:), RSSWReturnType(void), RSSWArguments(NSObject *observer, NSString *keyPath, NSKeyValueObservingOptions options, void *context), RSSWReplacement({
-        NSLog(@"xxxxxxx");
         if ([ZXCrashProtection isWorking]) {
-            if (object_getClass(observer) == objc_getClass("ZXKVODelegate") ) {
+            if (object_getClass(observer) == objc_getClass("ZXKVODelegate")) {
                 RSSWCallOriginal(observer, keyPath, options, context);
-                NSLog(@"run1");
                 return;
             }
             ZXKVODelegate *delegate = [self kvoDelegate];
@@ -58,14 +57,12 @@
                 delegate.kvoInfoMap[keyPath] = hashTable;
                 [self setkvoDelegate:delegate];
                 RSSWCallOriginal(observer, keyPath, options, context);
-                NSLog(@"run2");
             }else {
                 if ([hashTable containsObject:observer]) {
                     [ZXRecord recordNoteErrorWithReason:[NSString stringWithFormat:@"target %@, observer %@, keyPath %@: KVO add Observer too many times.", NSStringFromClass([self class]), NSStringFromClass([observer class]), keyPath] errorType:ZXCrashProtectionTypeKVO];
                 }else {
                     [hashTable addObject:observer];
                     RSSWCallOriginal(observer, keyPath, options, context);
-                    NSLog(@"run3");
                 }
             }
         }else {
@@ -77,9 +74,41 @@
 + (void)zx_swizzle_removeObserverForKeyPath {
     RSSwizzleInstanceMethod([NSObject class], @selector(removeObserver:forKeyPath:), RSSWReturnType(void), RSSWArguments(NSObject *observer, NSString *keyPath), RSSWReplacement({
         if ([ZXCrashProtection isWorking]) {
-            
+            if (object_getClass(observer) == objc_getClass("ZXKVODelegate")) {
+                RSSWCallOriginal(observer, keyPath);
+                return;
+            }
+            ZXKVODelegate *delegate = [self kvoDelegate];
+            NSHashTable<NSObject *> *hashTable = delegate.kvoInfoMap[keyPath];
+            if ([hashTable containsObject:observer]) {
+                [hashTable removeObject:observer];
+                RSSWCallOriginal(observer, keyPath);
+            }else {
+                [ZXRecord recordNoteErrorWithReason:[NSString stringWithFormat:@"Cannot remove an observer %@ for key path %@ because it is not registered as an observer.", observer, keyPath] errorType:ZXCrashProtectionTypeKVO];
+            }
+            if (hashTable.count == 0) {
+                [delegate.kvoInfoMap removeObjectForKey:keyPath];
+            }
         }else {
             RSSWCallOriginal(observer, keyPath);
+        }
+    }), RSSwizzleModeAlways, nil);
+}
+
++ (void)zx_swizzle_observeValueForKeyPathOfObjectChangeContext {
+    RSSwizzleInstanceMethod([NSObject class], @selector(observeValueForKeyPath:ofObject:change:context:), RSSWReturnType(void), RSSWArguments(NSString *keyPath, id object, NSDictionary<NSKeyValueChangeKey, id> *change, void *context), RSSWReplacement({
+        if ([ZXCrashProtection isWorking]) {
+            ZXKVODelegate *delegate = [object kvoDelegate];
+            NSHashTable<NSObject *> *hashTable = delegate.kvoInfoMap[keyPath];
+            for (NSObject *observer in hashTable) {
+                @try {
+                    ((__typeof(originalImplementation_))[swizzleInfo getOriginalImplementation])(observer, @selector(observeValueForKeyPath:ofObject:change:context:), keyPath, object, change, context);
+                } @catch (NSException *exception) {
+                    [ZXRecord recordNoteErrorWithReason:[NSString stringWithFormat:@"%@: An -observeValueForKeyPath:ofObject:change:context: message was received but not handled.", observer] errorType:ZXCrashProtectionTypeKVO];
+                }
+            }
+        }else {
+            RSSWCallOriginal(keyPath, object, change, context);
         }
     }), RSSwizzleModeAlways, nil);
 }
