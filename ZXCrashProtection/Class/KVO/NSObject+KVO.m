@@ -53,7 +53,7 @@
             }
             NSHashTable<NSObject *> *hashTable = delegate.kvoInfoMap[keyPath];
             if (hashTable.count == 0) {
-                hashTable = [[NSHashTable alloc] initWithOptions:NSPointerFunctionsWeakMemory capacity:0];
+                hashTable = [[NSHashTable alloc] initWithOptions:NSPointerFunctionsStrongMemory capacity:0];
                 [hashTable addObject:observer];
                 delegate.kvoInfoMap[keyPath] = hashTable;
                 [self setkvoDelegate:delegate];

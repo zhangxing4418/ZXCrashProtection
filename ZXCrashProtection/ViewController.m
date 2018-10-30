@@ -20,5 +20,8 @@
     // Do any additional setup after loading the view, typically from a nib.
 }
 
+- (IBAction)postNotification:(UIButton *)sender {
+//    [[NSNotificationCenter defaultCenter] postNotificationName:@"test" object:@"gdgdgdgdgdg" userInfo:nil];
+}
 
 @end

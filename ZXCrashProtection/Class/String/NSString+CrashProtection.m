@@ -22,7 +22,11 @@
         [NSString zx_swizzle_stringWithCStringEncoding];
         [BaseStringSwizzleMethod zx_swizzle_initMethodForClass:NSClassFromString(@"NSPlaceholderString")];
         [BaseStringSwizzleMethod zx_swizzle_operationMethodForClass:NSClassFromString(@"__NSCFConstantString")];
-        [BaseStringSwizzleMethod zx_swizzle_operationMethodForClass:NSClassFromString(@"NSTaggedPointerString")];
+        if (@available(iOS 9.0, *)) {
+            [BaseStringSwizzleMethod zx_swizzle_operationMethodForClass:NSClassFromString(@"NSTaggedPointerString")];
+        }else {
+            [BaseStringSwizzleMethod zx_swizzle_operationMethodForClass:NSClassFromString(@"__NSCFString")];
+        }
     });
 }
 

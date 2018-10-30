@@ -7,11 +7,13 @@
 //
 
 #import "KVOViewController.h"
+#import "NotificationTest.h"
 
 @interface KVOViewController ()
 
 @property (nonatomic, strong) UIButton *btn;
 @property (nonatomic, strong) UILabel *label;
+@property (nonatomic, strong) NotificationTest *test;
 
 @end
 
@@ -20,14 +22,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.btn = [UIButton buttonWithType:UIButtonTypeCustom];
-    self.label = [[UILabel alloc] init];
-    [self.btn addObserver:self forKeyPath:@"backgroundColor" options:NSKeyValueObservingOptionNew context:nil];
-//    [self.btn addObserver:self forKeyPath:@"titleLabel" options:NSKeyValueObservingOptionNew context:nil];
-//    [self.btn addObserver:self.label forKeyPath:@"backgroundColor" options:NSKeyValueObservingOptionNew context:nil];
-//    [self.btn addObserver:self forKeyPath:@"backgroundColor" options:NSKeyValueObservingOptionNew context:nil];
+    self.test = [[NotificationTest alloc] init];
+    [self.btn addObserver:self.test forKeyPath:@"backgroundColor" options:NSKeyValueObservingOptionInitial context:nil];
+}
+
+- (void)test:(NSNotification *)notification {
+    NSLog(@"%@", notification.object);
 }
 
 - (IBAction)close:(UIButton *)sender {
+//    [[NSNotificationCenter defaultCenter] removeObserver:self.test name:@"test" object:nil];
+    
 //    self.btn.backgroundColor = [UIColor redColor];
     
 //    [self.btn removeObserver:[UIApplication sharedApplication].delegate forKeyPath:@"backgroundColor"];
@@ -35,10 +40,6 @@
 //    [self.btn removeObserver:self forKeyPath:@"backgroundColor"];
     
     [self dismissViewControllerAnimated:YES completion:nil ];
-}
-
-- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context {
-    NSLog(@"%@", keyPath);
 }
 
 @end

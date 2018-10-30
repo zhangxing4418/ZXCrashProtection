@@ -34,12 +34,21 @@
                                     <segue destination="OUg-Hp-ncZ" kind="modal" id="lQa-ZT-Edi"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sdh-ex-AJ4">
+                                <rect key="frame" x="172" y="156" width="31" height="30"/>
+                                <state key="normal" title="post"/>
+                                <connections>
+                                    <action selector="postNotification:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BxI-7Y-YZ1"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="k3a-Im-gpz" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="LiQ-fa-rdH"/>
                             <constraint firstItem="XqO-iG-cWp" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="kXX-sU-z1x"/>
                             <constraint firstItem="k3a-Im-gpz" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="mga-8H-3Mv"/>
+                            <constraint firstItem="Sdh-ex-AJ4" firstAttribute="centerX" secondItem="k3a-Im-gpz" secondAttribute="centerX" id="wc5-Fd-IEb"/>
+                            <constraint firstItem="Sdh-ex-AJ4" firstAttribute="top" secondItem="LDs-Vm-o93" secondAttribute="bottom" constant="136" id="wxG-lH-0bL"/>
                             <constraint firstItem="7IP-rH-NG3" firstAttribute="top" secondItem="XqO-iG-cWp" secondAttribute="bottom" constant="157" id="xkb-HY-kUt"/>
                         </constraints>
                     </view>
