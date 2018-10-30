@@ -35,6 +35,7 @@
         [NSObject zx_swizzle_addObserverForKeyPathOptionsContext];
         [NSObject zx_swizzle_removeObserverForKeyPath];
         [NSObject zx_swizzle_observeValueForKeyPathOfObjectChangeContext];
+//        [NSObject zx_swizzle_dealloc];
     });
 }
 
@@ -110,6 +111,22 @@
         }else {
             RSSWCallOriginal(keyPath, object, change, context);
         }
+    }), RSSwizzleModeAlways, nil);
+}
+
++ (void)zx_swizzle_dealloc {
+    RSSwizzleInstanceMethod([NSObject class], NSSelectorFromString(@"dealloc"), RSSWReturnType(void), RSSWArguments(), RSSWReplacement({
+        ZXKVODelegate *delegate = [self kvoDelegate];
+        if (delegate) {
+            NSDictionary<NSString *, NSHashTable<NSObject *> *> *kvoinfos =  delegate.kvoInfoMap.copy;
+            for (NSString *keyPath in kvoinfos.allKeys) {
+                for (NSObject *observer in kvoinfos[keyPath].copy) {
+                    [self removeObserver:observer forKeyPath:keyPath];
+                    NSLog(@"%@: removeObserver: %@ forKeyPath: %@", self, observer, keyPath);
+                }
+            }
+        }
+        RSSWCallOriginal();
     }), RSSwizzleModeAlways, nil);
 }
 

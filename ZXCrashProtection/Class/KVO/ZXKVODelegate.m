@@ -7,10 +7,11 @@
 //
 
 #import "ZXKVODelegate.h"
+#import "ZXCrashProtection.h"
 
-@interface ZXKVODelegate ()
-
-@property (nonatomic, strong) NSObject *observed;
+@interface ZXKVODelegate () {
+    __unsafe_unretained NSObject *_observed;
+}
 
 @end
 
@@ -25,9 +26,23 @@
 
 - (instancetype)initWithObserved:(NSObject *)observed {
     if (self = [super init]) {
-        self.observed = observed;
+        _observed = observed;
     }
     return self;
+}
+
+- (void)dealloc {
+    NSDictionary<NSString *, NSHashTable<NSObject *> *> *kvoinfos =  self.kvoInfoMap.copy;
+    for (NSString *keyPath in kvoinfos.allKeys) {
+        for (NSObject *observer in kvoinfos[keyPath].copy) {
+            [ZXCrashProtection stop];
+            [_observed removeObserver:observer forKeyPath:keyPath];
+            [ZXCrashProtection start];
+            NSLog(@"%@: removeObserver: %@ forKeyPath: %@", _observed, observer, keyPath);
+        }
+    }
+    _observed = nil;
+    [self.kvoInfoMap removeAllObjects];
 }
 
 @end

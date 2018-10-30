@@ -28,13 +28,13 @@
 }
 
 - (IBAction)close:(UIButton *)sender {
-    self.btn.backgroundColor = [UIColor redColor];
+//    self.btn.backgroundColor = [UIColor redColor];
     
-//    [self.btn removeObserver:self forKeyPath:@"backgroundColor"];
+//    [self.btn removeObserver:[UIApplication sharedApplication].delegate forKeyPath:@"backgroundColor"];
 //    [self.btn removeObserver:self.label forKeyPath:@"backgroundColor"];
 //    [self.btn removeObserver:self forKeyPath:@"backgroundColor"];
     
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [self dismissViewControllerAnimated:YES completion:nil ];
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context {
