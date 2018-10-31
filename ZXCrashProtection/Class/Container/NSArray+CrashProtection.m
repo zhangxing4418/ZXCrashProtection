@@ -8,7 +8,7 @@
 
 #import "NSArray+CrashProtection.h"
 #import "ZXRecord.h"
-#import <RSSwizzle.h>
+#import <RSSwizzle/RSSwizzle.h>
 
 @implementation NSArray(CrashProtection)
 

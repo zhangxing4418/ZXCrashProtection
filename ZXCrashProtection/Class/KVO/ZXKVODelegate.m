@@ -10,7 +10,7 @@
 #import "ZXCrashProtection.h"
 #import "ZXRecord.h"
 #import <objc/runtime.h>
-#import <RSSwizzle.h>
+#import <RSSwizzle/RSSwizzle.h>
 
 @interface ZXKVODelegate () {
     __unsafe_unretained NSObject *_observed;

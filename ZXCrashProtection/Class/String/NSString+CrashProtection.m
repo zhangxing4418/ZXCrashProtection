@@ -10,7 +10,7 @@
 #import "ZXCrashProtection.h"
 #import "ZXRecord.h"
 #import "BaseStringSwizzleMethod.h"
-#import <RSSwizzle.h>
+#import <RSSwizzle/RSSwizzle.h>
 
 @implementation NSString(CrashProtection)
 

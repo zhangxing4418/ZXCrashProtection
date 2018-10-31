@@ -10,7 +10,7 @@
 #import "ZXNotificationDelegate.h"
 #import "ZXCrashProtection.h"
 #import "ZXRecord.h"
-#import <RSSwizzle.h>
+#import <RSSwizzle/RSSwizzle.h>
 #import <objc/runtime.h>
 
 @interface NSObject (NotificationDelegate)

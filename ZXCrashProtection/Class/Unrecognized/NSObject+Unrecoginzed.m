@@ -10,7 +10,7 @@
 #import "ZXCrashProtection.h"
 #import "ZXStubObject.h"
 #import "ZXRecord.h"
-#import <RSSwizzle.h>
+#import <RSSwizzle/RSSwizzle.h>
 
 @implementation NSObject(Unrecoginzed)
 

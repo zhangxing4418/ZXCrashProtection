@@ -9,7 +9,7 @@
 #import "NSCache+CrashProtection.h"
 #import "ZXCrashProtection.h"
 #import "ZXRecord.h"
-#import <RSSwizzle.h>
+#import <RSSwizzle/RSSwizzle.h>
 
 @implementation NSCache(CrashProtection)
 

@@ -9,7 +9,7 @@
 #import "NSMutableArray+CrashProtection.h"
 #import "ZXCrashProtection.h"
 #import "ZXRecord.h"
-#import <RSSwizzle.h>
+#import <RSSwizzle/RSSwizzle.h>
 
 @implementation NSMutableArray(CrashProtection)
 
