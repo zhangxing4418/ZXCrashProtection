@@ -15,9 +15,9 @@ pod 'ZXCrashProtection'
 用于判断防护系统是否启用
 * recordErrorDelegate:
 设置崩溃信息反馈的代理
-* starWithProtectionType:
+* startWithProtectionType:
 启动单个种类的防护
-* star
+* start
 默认实时启动所有防护
 * stop
 实时关闭所有防护
