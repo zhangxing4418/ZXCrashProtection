@@ -8,19 +8,31 @@
 * NSString crash
 * NSNull crash
 ## 如何安装
+```objc
 pod 'ZXCrashProtection'
+```
 ## 如何使用
 一共提供了5个方法：
-* isWorking
-用于判断防护系统是否启用
-* recordErrorDelegate:
-设置崩溃信息反馈的代理
-* startWithProtectionType:
-启动单个种类的防护
-* start
-默认实时启动所有防护
-* stop
-实时关闭所有防护
+* 用于判断防护系统是否启用
+```objc
+isWorking
+```
+* 设置崩溃信息反馈的代理
+```objc
+recordErrorDelegate:
+```
+* 启动单个种类的防护
+```objc
+startWithProtectionType:
+```
+* 默认实时启动所有防护
+```objc
+start
+```
+* 实时关闭所有防护
+```objc
+stop
+```
 特别注意：其中recordErrorDelegate:方法一定要写在启动防护方法之前！！！
 
 例如：
