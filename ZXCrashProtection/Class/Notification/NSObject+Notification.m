@@ -33,7 +33,7 @@
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         [NSObject zx_swizzle_addObserverSelectorNameObject];
-        [NSObject zx_swizzle_remove];
+        [NSObject zx_swizzle_removeObserverNameObject];
     });
 }
 
@@ -45,7 +45,6 @@
                 delegate = [[ZXNotificationDelegate alloc] initWithObserver:observer];
             }
             delegate.needRemove = YES;
-//            NSLog(@"%@ set needRemove = YES", observer);
             [observer setNotificationDelegate:delegate];
             RSSWCallOriginal(observer, aSelector, aName, anObject);
         }else {
@@ -54,12 +53,11 @@
     }), RSSwizzleModeAlways, nil);
 }
 
-+ (void)zx_swizzle_remove {
++ (void)zx_swizzle_removeObserverNameObject {
     RSSwizzleInstanceMethod([NSNotificationCenter class], @selector(removeObserver:name:object:), RSSWReturnType(void), RSSWArguments(id observer, NSNotificationName aName, id anObject), RSSWReplacement({
         if ([ZXCrashProtection isWorking]) {
             ZXNotificationDelegate *delegate = [observer notificationDelegate];
             delegate.needRemove = NO;
-//            NSLog(@"%@ set needRemove = NO, %@, %@", observer, aName, anObject);
             RSSWCallOriginal(observer, aName, anObject);
         }else {
             RSSWCallOriginal(observer, aName, anObject);

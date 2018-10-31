@@ -12,6 +12,7 @@
 #import "StringCrashProtection.h"
 #import "NSObject+KVO.h"
 #import "NSObject+Notification.h"
+#import "NSTimer+CrashProtection.h"
 #import "ZXRecord.h"
 
 static BOOL __isWorking;
@@ -33,6 +34,7 @@ static BOOL __isWorking;
         [StringCrashProtection launchStringCrashProtection];
         [NSObject launchKVOCrashProtection];
         [NSObject launchNotificationCrashProtection];
+        [NSTimer launchNSTimerCrashProtection];
     }
     if (type & ZXCrashProtectionTypeUnrecognizedSelector) {
         [NSObject launchUnrecoginzedSelectorProtection];
@@ -44,7 +46,7 @@ static BOOL __isWorking;
         [NSObject launchNotificationCrashProtection];
     }
     if (type & ZXCrashProtectionTypeTimer) {
-        
+        [NSTimer launchNSTimerCrashProtection];
     }
     if (type & ZXCrashProtectionTypeContainer) {
         [ContainerCrashProtection launchContainerCrashProtection];

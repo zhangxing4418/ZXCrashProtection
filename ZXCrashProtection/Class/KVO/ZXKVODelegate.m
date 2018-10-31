@@ -8,6 +8,9 @@
 
 #import "ZXKVODelegate.h"
 #import "ZXCrashProtection.h"
+#import "ZXRecord.h"
+#import <objc/runtime.h>
+#import <RSSwizzle.h>
 
 @interface ZXKVODelegate () {
     __unsafe_unretained NSObject *_observed;
@@ -38,7 +41,7 @@
             [ZXCrashProtection stop];
             [_observed removeObserver:observer forKeyPath:keyPath];
             [ZXCrashProtection start];
-            NSLog(@"%@: removeObserver: %@ forKeyPath: %@", _observed, observer, keyPath);
+            [ZXRecord recordNoteErrorWithReason:[NSString stringWithFormat:@"KVO - %@: removeObserver: %@ forKeyPath: %@", _observed, observer, keyPath] errorType:ZXCrashProtectionTypeKVO];
         }
     }
     _observed = nil;

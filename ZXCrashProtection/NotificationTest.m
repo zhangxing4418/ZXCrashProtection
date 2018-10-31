@@ -10,6 +10,16 @@
 
 @implementation NotificationTest
 
+- (void)timeTest {
+    static int count = 0;
+    count++;
+    NSLog(@"Timer: %d", count);
+}
+
+- (void)test:(NSNotification *)notification {
+    NSLog(@"%@", notification.object);
+}
+
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context {
     
 }

@@ -19,7 +19,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     [ZXCrashProtection recordErrorDelegate:self];
-    [ZXCrashProtection start];
+//    [ZXCrashProtection start];
     
     return YES;
 }

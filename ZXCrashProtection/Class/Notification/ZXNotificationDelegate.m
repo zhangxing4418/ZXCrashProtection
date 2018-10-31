@@ -7,6 +7,7 @@
 //
 
 #import "ZXNotificationDelegate.h"
+#import "ZXRecord.h"
 
 @interface ZXNotificationDelegate () {
     __unsafe_unretained id _observer;
@@ -26,6 +27,7 @@
 - (void)dealloc {
     if (_observer && self.needRemove) {
         [[NSNotificationCenter defaultCenter] removeObserver:_observer];
+        [ZXRecord recordNoteErrorWithReason:[NSString stringWithFormat:@"Notification removeObserver: %@", _observer] errorType:ZXCrashProtectionTypeNotification];
     }
 }
 

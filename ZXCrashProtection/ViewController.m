@@ -21,7 +21,7 @@
 }
 
 - (IBAction)postNotification:(UIButton *)sender {
-//    [[NSNotificationCenter defaultCenter] postNotificationName:@"test" object:@"gdgdgdgdgdg" userInfo:nil];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"test" object:@"testxxxxx"];
 }
 
 @end

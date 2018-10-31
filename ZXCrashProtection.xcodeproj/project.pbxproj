@@ -11,6 +11,7 @@
 		9B20408D218831800035BF29 /* NSObject+Notification.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B20408C218831800035BF29 /* NSObject+Notification.m */; };
 		9B20409021884D770035BF29 /* ZXNotificationDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B20408F21884D770035BF29 /* ZXNotificationDelegate.m */; };
 		9B20409321885D000035BF29 /* NotificationTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B20409221885D000035BF29 /* NotificationTest.m */; };
+		9B20409721895D480035BF29 /* NSTimer+CrashProtection.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B20409621895D480035BF29 /* NSTimer+CrashProtection.m */; };
 		9BEC9FCC217EBB2000C75780 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BEC9FCB217EBB2000C75780 /* AppDelegate.m */; };
 		9BEC9FCF217EBB2000C75780 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BEC9FCE217EBB2000C75780 /* ViewController.m */; };
 		9BEC9FD2217EBB2000C75780 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BEC9FD0217EBB2000C75780 /* Main.storyboard */; };
@@ -45,6 +46,8 @@
 		9B20408F21884D770035BF29 /* ZXNotificationDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZXNotificationDelegate.m; sourceTree = "<group>"; };
 		9B20409121885D000035BF29 /* NotificationTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationTest.h; sourceTree = "<group>"; };
 		9B20409221885D000035BF29 /* NotificationTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotificationTest.m; sourceTree = "<group>"; };
+		9B20409521895D480035BF29 /* NSTimer+CrashProtection.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSTimer+CrashProtection.h"; sourceTree = "<group>"; };
+		9B20409621895D480035BF29 /* NSTimer+CrashProtection.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSTimer+CrashProtection.m"; sourceTree = "<group>"; };
 		9BEC9FC7217EBB2000C75780 /* ZXCrashProtection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZXCrashProtection.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BEC9FCA217EBB2000C75780 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		9BEC9FCB217EBB2000C75780 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -126,6 +129,15 @@
 			path = Notification;
 			sourceTree = "<group>";
 		};
+		9B204094218959100035BF29 /* Timer */ = {
+			isa = PBXGroup;
+			children = (
+				9B20409521895D480035BF29 /* NSTimer+CrashProtection.h */,
+				9B20409621895D480035BF29 /* NSTimer+CrashProtection.m */,
+			);
+			path = Timer;
+			sourceTree = "<group>";
+		};
 		9BEC9FBE217EBB2000C75780 = {
 			isa = PBXGroup;
 			children = (
@@ -171,6 +183,7 @@
 				9BEC9FF5217F159800C75780 /* Record */,
 				9BEC9FEB217EF97000C75780 /* ZXCrashProtection.h */,
 				9BEC9FEC217EF97000C75780 /* ZXCrashProtection.m */,
+				9B204094218959100035BF29 /* Timer */,
 				9B204087218830F70035BF29 /* Notification */,
 				9BECA0152182B35100C75780 /* KVO */,
 				9BECA0082181539C00C75780 /* String */,
@@ -383,6 +396,7 @@
 				9BEC9FF4217F13F800C75780 /* ContainerCrashProtection.m in Sources */,
 				9BEC9FCF217EBB2000C75780 /* ViewController.m in Sources */,
 				9BEC9FEA217ED25100C75780 /* ZXStubObject.m in Sources */,
+				9B20409721895D480035BF29 /* NSTimer+CrashProtection.m in Sources */,
 				9BEC9FED217EF97000C75780 /* ZXCrashProtection.m in Sources */,
 				9B20408D218831800035BF29 /* NSObject+Notification.m in Sources */,
 				9BECA00E2181545E00C75780 /* StringCrashProtection.m in Sources */,
