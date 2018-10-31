@@ -1,0 +1,2 @@
+# ZXCrashProtection
+在App运行发生崩溃是及时阻止和进行修复
