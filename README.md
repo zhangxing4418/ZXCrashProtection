@@ -38,8 +38,10 @@ stop
 例如：
 ```objc
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    //建议在该方法中优先处理
     [ZXCrashProtection recordErrorDelegate:self];
     [ZXCrashProtection start];
+    //doSomething
     return YES;
 }
 
