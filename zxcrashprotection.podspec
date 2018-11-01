@@ -16,8 +16,8 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "ZXCrashProtection"
-  s.version      = "1.0.2"
-  s.summary      = "利用Swizzle Method阻止App在运行时发生崩溃"
+  s.version      = "1.0.3"
+  s.summary      = "App Crash的自动防护和修复系统"
 
   # This description is used to generate tags and improve search results.
   #   * Think: What does it do? Why did you write it? What is the focus?
