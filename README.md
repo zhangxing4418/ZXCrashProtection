@@ -21,7 +21,7 @@ isWorking
 ```objc
 recordErrorDelegate:
 ```
-* 启动单个种类的防护
+* 选择启动单个或多个种类的防护
 ```objc
 startWithProtectionType:
 ```
