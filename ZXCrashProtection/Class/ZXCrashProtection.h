@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-typedef NS_ENUM(NSUInteger, ZXCrashProtectionType) {
+typedef NS_OPTIONS(NSUInteger, ZXCrashProtectionType) {
     ZXCrashProtectionTypeUnrecognizedSelector = 1 << 1,
     ZXCrashProtectionTypeKVO = 1 << 2,
     ZXCrashProtectionTypeNotification = 1 << 3,
