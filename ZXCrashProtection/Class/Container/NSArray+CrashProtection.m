@@ -53,7 +53,7 @@
     Class __NSArray = NSClassFromString(@"NSArray");
     RSSwizzleInstanceMethod(__NSArray, @selector(objectsAtIndexes:), RSSWReturnType(NSArray *), RSSWArguments(NSIndexSet *indexes), RSSWReplacement({
         if ([ZXCrashProtection isWorking]) {
-            if ([self count] > indexes.lastIndex) {
+            if ([self count] > indexes.lastIndex || indexes.count == 0) {
                 return RSSWCallOriginal(indexes);
             }else {
                 [ZXRecord recordNoteErrorWithReason:[NSString stringWithFormat:@"-[NSArray objectsAtIndexes:]: index %ld in index set beyond bounds [0 .. %ld]", indexes.lastIndex, [self count] - 1] errorType:ZXCrashProtectionTypeContainer];
