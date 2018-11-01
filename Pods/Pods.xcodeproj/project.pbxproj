@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -30,17 +30,17 @@
 		1333239F3717CCF076C4411A70CF4677 /* Pods-ZXCrashProtection-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ZXCrashProtection-resources.sh"; sourceTree = "<group>"; };
 		1C9515D7C34538E60B429125F63EC6DE /* RSSwizzle.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = RSSwizzle.m; path = RSSwizzle/RSSwizzle.m; sourceTree = "<group>"; };
 		26F0463611FEC1553A861BB7996DFC7C /* RSSwizzle.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RSSwizzle.h; path = RSSwizzle/RSSwizzle.h; sourceTree = "<group>"; };
-		32B7C2DB6253ACBF7A2A355E70D99401 /* libRSSwizzle.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRSSwizzle.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		32B7C2DB6253ACBF7A2A355E70D99401 /* libRSSwizzle.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libRSSwizzle.a; path = libRSSwizzle.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		4067A6AB6F34304329030D18BFFB9995 /* Pods-ZXCrashProtection.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ZXCrashProtection.debug.xcconfig"; sourceTree = "<group>"; };
 		48B4917DA35EF345D3C411BD006B3D9E /* Pods-ZXCrashProtection-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ZXCrashProtection-acknowledgements.plist"; sourceTree = "<group>"; };
 		5780AF32058979A44C6F53DABD6D13B7 /* Pods-ZXCrashProtection-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ZXCrashProtection-frameworks.sh"; sourceTree = "<group>"; };
 		64F8587074BC9F4B6AC8B2D024339A10 /* Pods-ZXCrashProtection-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ZXCrashProtection-acknowledgements.markdown"; sourceTree = "<group>"; };
 		6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		834E1AFB6685034067D284504C683AD3 /* RSSwizzle.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = RSSwizzle.xcconfig; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		B5172D9DEC6D5E9AA3A6B45FF8F041AD /* Pods-ZXCrashProtection-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ZXCrashProtection-dummy.m"; sourceTree = "<group>"; };
 		C81715225AB53B6A08C50BB291676257 /* RSSwizzle-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "RSSwizzle-dummy.m"; sourceTree = "<group>"; };
-		ED18BB7DABA303705B3EB6E6BDFAA078 /* libPods-ZXCrashProtection.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ZXCrashProtection.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED18BB7DABA303705B3EB6E6BDFAA078 /* libPods-ZXCrashProtection.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-ZXCrashProtection.a"; path = "libPods-ZXCrashProtection.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F90B5B11A884A78405D762B7A7D7DF52 /* RSSwizzle-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RSSwizzle-prefix.pch"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -113,6 +113,7 @@
 				1C9515D7C34538E60B429125F63EC6DE /* RSSwizzle.m */,
 				B5C5307554784AC59C79824D86D6A6D5 /* Support Files */,
 			);
+			name = RSSwizzle;
 			path = RSSwizzle;
 			sourceTree = "<group>";
 		};
@@ -207,7 +208,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0930;
-				LastUpgradeCheck = 1000;
+				LastUpgradeCheck = 0930;
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -286,7 +287,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				GCC_PREFIX_HEADER = "Target Support Files/RSSwizzle/RSSwizzle-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PRIVATE_HEADERS_FOLDER_PATH = "";
@@ -391,7 +392,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				GCC_PREFIX_HEADER = "Target Support Files/RSSwizzle/RSSwizzle-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PRIVATE_HEADERS_FOLDER_PATH = "";

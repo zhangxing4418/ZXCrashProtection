@@ -11,14 +11,13 @@
 NS_ASSUME_NONNULL_BEGIN
 
 typedef NS_ENUM(NSUInteger, ZXCrashProtectionType) {
-    ZXCrashProtectionTypeNone,
-    ZXCrashProtectionTypeAll,
-    ZXCrashProtectionTypeUnrecognizedSelector,
-    ZXCrashProtectionTypeKVO,
-    ZXCrashProtectionTypeNotification,
-    ZXCrashProtectionTypeTimer,
-    ZXCrashProtectionTypeContainer,
-    ZXCrashProtectionTypeString
+    ZXCrashProtectionTypeUnrecognizedSelector = 1 << 1,
+    ZXCrashProtectionTypeKVO = 1 << 2,
+    ZXCrashProtectionTypeNotification = 1 << 3,
+    ZXCrashProtectionTypeTimer = 1 << 4,
+    ZXCrashProtectionTypeContainer = 1 << 5,
+    ZXCrashProtectionTypeString = 1 << 6,
+    ZXCrashProtectionTypeAll = (ZXCrashProtectionTypeUnrecognizedSelector | ZXCrashProtectionTypeKVO | ZXCrashProtectionTypeNotification | ZXCrashProtectionTypeTimer | ZXCrashProtectionTypeContainer | ZXCrashProtectionTypeString)
 };
 
 @protocol ZXCrashProtectionProtocol <NSObject>

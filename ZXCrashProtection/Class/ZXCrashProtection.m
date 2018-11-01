@@ -28,14 +28,6 @@ static BOOL __isWorking;
 }
 
 + (void)startWithProtectionType:(ZXCrashProtectionType)type {
-    if (type & ZXCrashProtectionTypeAll) {
-        [NSObject launchUnrecoginzedSelectorProtection];
-        [ContainerCrashProtection launchContainerCrashProtection];
-        [StringCrashProtection launchStringCrashProtection];
-        [NSObject launchKVOCrashProtection];
-        [NSObject launchNotificationCrashProtection];
-        [NSTimer launchNSTimerCrashProtection];
-    }
     if (type & ZXCrashProtectionTypeUnrecognizedSelector) {
         [NSObject launchUnrecoginzedSelectorProtection];
     }
@@ -54,11 +46,11 @@ static BOOL __isWorking;
     if (type & ZXCrashProtectionTypeString) {
         [StringCrashProtection launchStringCrashProtection];
     }
+    __isWorking = YES;
 }
 
 + (void)start {
     [ZXCrashProtection startWithProtectionType:ZXCrashProtectionTypeAll];
-    __isWorking = YES;
 }
 
 + (void)stop {
