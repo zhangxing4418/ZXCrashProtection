@@ -13,6 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface ZXKVODelegate : NSObject
 
 @property (nonatomic, strong) NSMutableDictionary<NSString *, NSHashTable <NSObject *>*> *kvoInfoMap;
+@property (nonatomic, strong) NSMutableDictionary<NSString *, NSHashTable <NSString *>*> *observerRecordMap;
 
 - (instancetype)initWithObserved:(NSObject *)observed;
 

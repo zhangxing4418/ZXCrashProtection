@@ -11,10 +11,10 @@
 
 @interface KVOViewController ()
 
-//@property (nonatomic, strong) UIButton *btn;
+@property (nonatomic, strong) UIButton *btn;
 //@property (nonatomic, strong) UILabel *label;
 @property (nonatomic, strong) NotificationTest *test;
-@property (nonatomic, strong) NSTimer *timer;
+//@property (nonatomic, strong) NSTimer *timer;
 
 @end
 
@@ -24,9 +24,9 @@
     [super viewDidLoad];
 //    self.btn = [UIButton buttonWithType:UIButtonTypeCustom];
     self.test = [[NotificationTest alloc] init];
-//    [self.btn addObserver:self.test forKeyPath:@"backgroundColor" options:NSKeyValueObservingOptionInitial context:nil];
+    [self.test addObserver:self forKeyPath:@"backgroundColor" options:NSKeyValueObservingOptionInitial context:nil];
 //    [[NSNotificationCenter defaultCenter] addObserver:self.test selector:@selector(test:) name:@"test" object:nil];
-    self.timer = [NSTimer scheduledTimerWithTimeInterval:1 target:self.test selector:@selector(timeTest) userInfo:nil repeats:YES];
+//    self.timer = [NSTimer scheduledTimerWithTimeInterval:1 target:self.test selector:@selector(timeTest) userInfo:nil repeats:YES];
 }
 
 
@@ -39,12 +39,19 @@
 //    [self.btn removeObserver:[UIApplication sharedApplication].delegate forKeyPath:@"backgroundColor"];
 //    [self.btn removeObserver:self.label forKeyPath:@"backgroundColor"];
 //    [self.btn removeObserver:self forKeyPath:@"backgroundColor"];
+//    [self.test removeObserver:self forKeyPath:@"backgroundColor"];
     [self dismissViewControllerAnimated:YES completion:nil ];
 //    self.test = nil;
 }
 
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context {
+    
+}
+
 - (void)dealloc {
 //    [[NSNotificationCenter defaultCenter] removeObserver:self.test name:@"test" object:nil];
+    [self.test removeObserver:self forKeyPath:@"backgroundColor"];
+    NSLog(@"KVOViewController dealloc");
 }
 
 @end

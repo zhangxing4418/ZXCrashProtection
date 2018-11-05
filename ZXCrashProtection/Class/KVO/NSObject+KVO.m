@@ -52,8 +52,20 @@
                 [self setkvoDelegate:delegate];
             }
             NSHashTable<NSObject *> *hashTable = delegate.kvoInfoMap[keyPath];
+            NSHashTable<NSString *> *recordHashTable = delegate.observerRecordMap[keyPath];
+            NSString *observerFlag = [NSString stringWithFormat:@"%@", observer];
+            if (recordHashTable.count == 0) {
+                recordHashTable = [[NSHashTable alloc] initWithOptions:NSPointerFunctionsStrongMemory capacity:0];
+                [recordHashTable addObject:observerFlag];
+                delegate.observerRecordMap[keyPath] = recordHashTable;
+                [self setkvoDelegate:delegate];
+            }else {
+                if (![recordHashTable containsObject:observerFlag]) {
+                    [recordHashTable addObject:observerFlag];
+                }
+            }
             if (hashTable.count == 0) {
-                hashTable = [[NSHashTable alloc] initWithOptions:NSPointerFunctionsStrongMemory capacity:0];
+                hashTable = [[NSHashTable alloc] initWithOptions:NSPointerFunctionsWeakMemory capacity:0];
                 [hashTable addObject:observer];
                 delegate.kvoInfoMap[keyPath] = hashTable;
                 [self setkvoDelegate:delegate];
@@ -81,6 +93,11 @@
             }
             ZXKVODelegate *delegate = [self kvoDelegate];
             NSHashTable<NSObject *> *hashTable = delegate.kvoInfoMap[keyPath];
+            NSHashTable<NSString *> *recordHashTable = delegate.observerRecordMap[keyPath];
+            if ([hashTable allObjects].count == 0 && [recordHashTable allObjects].count != 0) {
+                RSSWCallOriginal(observer, keyPath);
+                return;
+            }
             if ([hashTable containsObject:observer]) {
                 [hashTable removeObject:observer];
                 RSSWCallOriginal(observer, keyPath);

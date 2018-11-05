@@ -27,6 +27,13 @@
     return _kvoInfoMap;
 }
 
+- (NSMutableDictionary<NSString *, NSHashTable <NSString *>*> *)observerRecordMap {
+    if (!_observerRecordMap) {
+        _observerRecordMap = @{}.mutableCopy;
+    }
+    return _observerRecordMap;
+}
+
 - (instancetype)initWithObserved:(NSObject *)observed {
     if (self = [super init]) {
         _observed = observed;
@@ -35,17 +42,18 @@
 }
 
 - (void)dealloc {
-    NSDictionary<NSString *, NSHashTable<NSObject *> *> *kvoinfos =  self.kvoInfoMap.copy;
-    for (NSString *keyPath in kvoinfos.allKeys) {
-        for (NSObject *observer in kvoinfos[keyPath].copy) {
-            [ZXCrashProtection stop];
-            [_observed removeObserver:observer forKeyPath:keyPath];
-            [ZXCrashProtection start];
-            [ZXRecord recordNoteErrorWithReason:[NSString stringWithFormat:@"KVO - %@: removeObserver: %@ forKeyPath: %@", _observed, observer, keyPath] errorType:ZXCrashProtectionTypeKVO];
+    @autoreleasepool {
+        NSDictionary<NSString *, NSHashTable<NSObject *> *> *kvoinfos =  self.kvoInfoMap.copy;
+        for (NSString *keyPath in kvoinfos.allKeys) {
+            NSHashTable *hashTable = kvoinfos[keyPath].copy;
+            for (NSObject *observer in hashTable) {
+                [ZXCrashProtection stop];
+                [_observed removeObserver:observer forKeyPath:keyPath];
+                [ZXCrashProtection start];
+                [ZXRecord recordNoteErrorWithReason:[NSString stringWithFormat:@"KVO - %@: removeObserver: %@ forKeyPath: %@", _observed, observer, keyPath] errorType:ZXCrashProtectionTypeKVO];
+            }
         }
     }
-    _observed = nil;
-    [self.kvoInfoMap removeAllObjects];
 }
 
 @end
