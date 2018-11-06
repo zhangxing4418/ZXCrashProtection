@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		25FD0F486FD3A0D095307CA5 /* libPods-ZXCrashProtection.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 10E987418060D6C001FE1AE7 /* libPods-ZXCrashProtection.a */; };
+		9B0DC00F21913D77005639D3 /* KVOObserverInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B0DC00E21913D77005639D3 /* KVOObserverInfo.m */; };
 		9B20409321885D000035BF29 /* NotificationTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B20409221885D000035BF29 /* NotificationTest.m */; };
 		9B86F7B4218A96D400BA447F /* ZXRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B86F787218A96D400BA447F /* ZXRecord.m */; };
 		9B86F7B5218A96D400BA447F /* ZXKVODelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B86F78B218A96D400BA447F /* ZXKVODelegate.m */; };
@@ -40,6 +41,8 @@
 
 /* Begin PBXFileReference section */
 		10E987418060D6C001FE1AE7 /* libPods-ZXCrashProtection.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ZXCrashProtection.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9B0DC00D21913D77005639D3 /* KVOObserverInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KVOObserverInfo.h; sourceTree = "<group>"; };
+		9B0DC00E21913D77005639D3 /* KVOObserverInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KVOObserverInfo.m; sourceTree = "<group>"; };
 		9B20409121885D000035BF29 /* NotificationTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationTest.h; sourceTree = "<group>"; };
 		9B20409221885D000035BF29 /* NotificationTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotificationTest.m; sourceTree = "<group>"; };
 		9B86F786218A96D400BA447F /* ZXRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXRecord.h; sourceTree = "<group>"; };
@@ -150,6 +153,8 @@
 				9B86F78A218A96D400BA447F /* NSObject+KVO.h */,
 				9B86F78B218A96D400BA447F /* ZXKVODelegate.m */,
 				9B86F78C218A96D400BA447F /* NSObject+KVO.m */,
+				9B0DC00D21913D77005639D3 /* KVOObserverInfo.h */,
+				9B0DC00E21913D77005639D3 /* KVOObserverInfo.m */,
 			);
 			path = KVO;
 			sourceTree = "<group>";
@@ -280,8 +285,6 @@
 				9BEC9FC3217EBB2000C75780 /* Sources */,
 				9BEC9FC4217EBB2000C75780 /* Frameworks */,
 				9BEC9FC5217EBB2000C75780 /* Resources */,
-				923FA271FA8F87F74D367902 /* [CP] Embed Pods Frameworks */,
-				68C3D6444718F6BEA8A025C0 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -338,21 +341,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		68C3D6444718F6BEA8A025C0 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ZXCrashProtection/Pods-ZXCrashProtection-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		79C25B792927AC16E86E7F47 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -369,21 +357,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		923FA271FA8F87F74D367902 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ZXCrashProtection/Pods-ZXCrashProtection-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -403,6 +376,7 @@
 				9B86F7B5218A96D400BA447F /* ZXKVODelegate.m in Sources */,
 				9BECA01E2182ED7800C75780 /* KVOViewController.m in Sources */,
 				9BEC9FDA217EBB2200C75780 /* main.m in Sources */,
+				9B0DC00F21913D77005639D3 /* KVOObserverInfo.m in Sources */,
 				9B86F7BA218A96D400BA447F /* ZXStubObject.m in Sources */,
 				9B86F7B7218A96D400BA447F /* NSObject+Notification.m in Sources */,
 				9B86F7B6218A96D400BA447F /* NSObject+KVO.m in Sources */,

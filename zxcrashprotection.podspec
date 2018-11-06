@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "ZXCrashProtection"
-  s.version      = "1.0.8"
+  s.version      = "1.0.9"
   s.summary      = "App Crash的自动防护和修复系统"
 
   # This description is used to generate tags and improve search results.

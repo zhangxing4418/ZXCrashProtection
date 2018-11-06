@@ -4,9 +4,13 @@ PODS:
 DEPENDENCIES:
   - RSSwizzle
 
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - RSSwizzle
+
 SPEC CHECKSUMS:
   RSSwizzle: d561958f595028bfcef98c7d55c318b3878a61c6
 
 PODFILE CHECKSUM: d3b5cd769ec68c14c5ce7380e9830460ae301f9e
 
-COCOAPODS: 1.4.0
+COCOAPODS: 1.5.3

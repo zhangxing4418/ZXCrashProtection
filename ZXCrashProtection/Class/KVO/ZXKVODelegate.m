@@ -9,6 +9,7 @@
 #import "ZXKVODelegate.h"
 #import "ZXCrashProtection.h"
 #import "ZXRecord.h"
+#import "KVOObserverInfo.h"
 #import <objc/runtime.h>
 #import <RSSwizzle/RSSwizzle.h>
 
@@ -46,11 +47,13 @@
         NSDictionary<NSString *, NSHashTable<NSObject *> *> *kvoinfos =  self.kvoInfoMap.copy;
         for (NSString *keyPath in kvoinfos.allKeys) {
             NSHashTable *hashTable = kvoinfos[keyPath].copy;
-            for (NSObject *observer in hashTable) {
-                [ZXCrashProtection stop];
-                [_observed removeObserver:observer forKeyPath:keyPath];
-                [ZXCrashProtection start];
-                [ZXRecord recordNoteErrorWithReason:[NSString stringWithFormat:@"KVO - %@: removeObserver: %@ forKeyPath: %@", _observed, observer, keyPath] errorType:ZXCrashProtectionTypeKVO];
+            for (KVOObserverInfo *observerInfo in hashTable) {
+                if (observerInfo.observerHash == observerInfo.observer.hash) {
+                    [ZXCrashProtection stop];
+                    [_observed removeObserver:observerInfo.observer forKeyPath:keyPath];
+                    [ZXCrashProtection start];
+                    [ZXRecord recordNoteErrorWithReason:[NSString stringWithFormat:@"KVO - %@: removeObserver: %@ forKeyPath: %@", _observed, observerInfo.observer, keyPath] errorType:ZXCrashProtectionTypeKVO];
+                }
             }
         }
     }

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -31,7 +31,7 @@
                                 <rect key="frame" x="170" y="480" width="35" height="30"/>
                                 <state key="normal" title="Push"/>
                                 <connections>
-                                    <segue destination="OUg-Hp-ncZ" kind="modal" id="lQa-ZT-Edi"/>
+                                    <action selector="push:" destination="BYZ-38-t0r" eventType="touchUpInside" id="z74-St-XV4"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sdh-ex-AJ4">
@@ -56,45 +56,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="100.29985007496252"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="HSi-bH-LYc">
-            <objects>
-                <viewController id="OUg-Hp-ncZ" customClass="KVOViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="pXO-At-K4i"/>
-                        <viewControllerLayoutGuide type="bottom" id="ckr-25-1Ic"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Cad-t2-liI">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="KVO" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D3i-Gw-grk">
-                                <rect key="frame" x="145" y="308" width="85" height="51"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="42"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5wu-4F-1oK">
-                                <rect key="frame" x="169" y="480" width="37" height="30"/>
-                                <state key="normal" title="close"/>
-                                <connections>
-                                    <action selector="close:" destination="OUg-Hp-ncZ" eventType="touchUpInside" id="gt2-Ba-Czj"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="D3i-Gw-grk" firstAttribute="centerX" secondItem="Cad-t2-liI" secondAttribute="centerX" id="WbE-wf-Zyh"/>
-                            <constraint firstItem="ckr-25-1Ic" firstAttribute="top" secondItem="5wu-4F-1oK" secondAttribute="bottom" constant="157" id="Zec-Lb-bvc"/>
-                            <constraint firstItem="D3i-Gw-grk" firstAttribute="centerX" secondItem="5wu-4F-1oK" secondAttribute="centerX" id="rbN-nL-ei2"/>
-                            <constraint firstItem="D3i-Gw-grk" firstAttribute="centerY" secondItem="Cad-t2-liI" secondAttribute="centerY" id="uVb-3a-lvV"/>
-                        </constraints>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="wVj-bw-zX9" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="881" y="100"/>
         </scene>
     </scenes>
 </document>
