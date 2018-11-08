@@ -15,7 +15,7 @@
 
 @property (nonatomic, weak) NSTimer *timer;
 @property (nonatomic, weak) id target;
-@property (nonatomic) SEL aSelector;
+@property (nonatomic, assign) SEL aSelector;
 
 @end
 
