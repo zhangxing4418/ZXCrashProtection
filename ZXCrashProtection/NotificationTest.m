@@ -7,21 +7,34 @@
 //
 
 #import "NotificationTest.h"
+#import "NotificationTest+Category.h"
 
 @implementation NotificationTest
 
-- (void)timeTest {
-    static int count = 0;
-    count++;
-    NSLog(@"Timer: %d", count);
+- (instancetype)init {
+    if (self = [super init]) {
+        [self addNotification];
+    }
+    return self;
 }
 
-- (void)test:(NSNotification *)notification {
-    NSLog(@"%@", notification.object);
-}
+//- (void)timeTest {
+//    static int count = 0;
+//    count++;
+//    NSLog(@"Timer: %d", count);
+//}
+//
+//- (void)test:(NSNotification *)notification {
+//    NSLog(@"%@", notification.object);
+//}
+//
+//- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context {
+//    
+//}
 
-- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context {
-    
+- (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    NSLog(@"dealloc NotificationTest");
 }
 
 @end

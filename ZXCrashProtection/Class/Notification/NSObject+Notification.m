@@ -46,6 +46,7 @@
             }
             delegate.needRemove = YES;
             [observer setNotificationDelegate:delegate];
+            NSLog(@"zx_swizzle_addObserverSelectorNameObject: %@, %@", observer, aName);
             RSSWCallOriginal(observer, aSelector, aName, anObject);
         }else {
             RSSWCallOriginal(observer, aSelector, aName, anObject);
@@ -58,6 +59,7 @@
         if ([ZXCrashProtection isWorking]) {
             ZXNotificationDelegate *delegate = [observer notificationDelegate];
             delegate.needRemove = NO;
+            NSLog(@"zx_swizzle_removeObserverNameObject: %@, %@", observer, aName);
             RSSWCallOriginal(observer, aName, anObject);
         }else {
             RSSWCallOriginal(observer, aName, anObject);

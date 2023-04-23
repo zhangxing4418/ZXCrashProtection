@@ -12,7 +12,7 @@
 
 @interface ViewController ()
 
-@property (nonatomic, strong) NotificationTest *test;
+//@property (nonatomic, strong) NotificationTest *test;
 
 @end
 
@@ -20,7 +20,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.test = [[NotificationTest alloc] init];
+//    self.test = [[NotificationTest alloc] init];
     // Do any additional setup after loading the view, typically from a nib.
 }
 
@@ -30,7 +30,7 @@
 
 - (IBAction)push:(id)sender {
     KVOViewController *viewController = [[KVOViewController alloc] init];
-    viewController.test = self.test;
+//    viewController.test = self.test;
     [self presentViewController:viewController animated:YES completion:nil];
 }
 

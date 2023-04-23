@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface KVOViewController : UIViewController
 
-@property (nonatomic, unsafe_unretained) NotificationTest *test;
+@property (nonatomic, strong) NotificationTest *test;
 
 @end
 

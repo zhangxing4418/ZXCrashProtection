@@ -28,12 +28,12 @@
     return _kvoInfoMap;
 }
 
-- (NSMutableDictionary<NSString *, NSHashTable <NSString *>*> *)observerRecordMap {
-    if (!_observerRecordMap) {
-        _observerRecordMap = @{}.mutableCopy;
-    }
-    return _observerRecordMap;
-}
+//- (NSMutableDictionary<NSString *, NSHashTable <NSString *>*> *)observerRecordMap {
+//    if (!_observerRecordMap) {
+//        _observerRecordMap = @{}.mutableCopy;
+//    }
+//    return _observerRecordMap;
+//}
 
 - (instancetype)initWithObserved:(NSObject *)observed {
     if (self = [super init]) {
